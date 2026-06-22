@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Heart, Stethoscope, Scissors, Hotel, Bath, Menu, X, Sun, Moon, ArrowRight, MapPin, Phone, Clock, Star, ChevronDown, Shield, Award, Users, PawPrint, Cat, Dog, Bone, Syringe, Pill, ShoppingCart } from 'lucide-react'
+import { Heart, Stethoscope, Scissors, Hotel, Bath, Camera, Menu, X, Sun, Moon, ArrowRight, MapPin, Phone, Clock, Star, ChevronDown, Shield, Award, Users, PawPrint, Cat, Dog, Bone, Syringe, Pill, ShoppingCart } from 'lucide-react'
 
 const WHATSAPP = 'https://wa.me/5511999999999?text=Olá! Gostaria de agendar um serviço para meu pet!'
 
@@ -12,12 +12,12 @@ const services = [
 ]
 
 const gallery = [
-    { label: 'Banho', emoji: '🛁', gradient: 'from-blue-400/20 to-cyan-400/20' },
-    { label: 'Tosa', emoji: '✂️', gradient: 'from-purple-400/20 to-pink-400/20' },
-    { label: 'Hotel', emoji: '🏨', gradient: 'from-green-400/20 to-emerald-400/20' },
-    { label: 'Veterinário', emoji: '💊', gradient: 'from-red-400/20 to-rose-400/20' },
-    { label: 'Brincadeiras', emoji: '🎾', gradient: 'from-yellow-400/20 to-amber-400/20' },
-    { label: 'Fotinho', emoji: '📸', gradient: 'from-pink-400/20 to-fuchsia-400/20' },
+    { label: 'Banho', icon: Bath, gradient: 'from-blue-400/20 to-cyan-400/20' },
+    { label: 'Tosa', icon: Scissors, gradient: 'from-purple-400/20 to-pink-400/20' },
+    { label: 'Hotel', icon: Hotel, gradient: 'from-green-400/20 to-emerald-400/20' },
+    { label: 'Veterinário', icon: Stethoscope, gradient: 'from-red-400/20 to-rose-400/20' },
+    { label: 'Brincadeiras', icon: Bone, gradient: 'from-yellow-400/20 to-amber-400/20' },
+    { label: 'Fotinho', icon: Camera, gradient: 'from-pink-400/20 to-fuchsia-400/20' },
 ]
 
 const testimonials = [
@@ -78,7 +78,7 @@ export default function App() {
             >
                 <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
                     <a href="#" className="font-display font-bold text-2xl text-[var(--text)]">
-                        🐾 Pet<span className="text-[var(--color-brand)]">Vida</span>
+<PawPrint size={24} className="inline-block mr-2 align-middle" /> Pet<span className="text-[var(--color-brand)]">Vida</span>
                     </a>
 
                     <div className="hidden md:flex items-center gap-10">
@@ -93,7 +93,7 @@ export default function App() {
                             {dark ? <Sun size={20} /> : <Moon size={20} />}
                         </button>
                         <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="hidden md:inline-flex items-center gap-2 px-7 py-3 bg-[var(--color-brand)] text-white rounded-xl font-bold text-sm uppercase tracking-wider hover:bg-[var(--color-brand-dark)] transition-all hover:shadow-lg hover:shadow-[var(--color-brand)]/30">
-                            📱 Agendar
+                            <Phone size={16} className="inline-block mr-1 align-middle" /> Agendar
                         </a>
                         <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden p-2 text-[var(--text)]">
                             {menuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -140,7 +140,7 @@ export default function App() {
                                 transition={{ delay: 0.2 }}
                                 className="inline-flex items-center gap-2 px-5 py-2.5 border border-white/10 rounded-full text-white/60 text-xs font-bold uppercase tracking-widest mb-8 bg-white/5 backdrop-blur-sm"
                             >
-                                🐾 Pet Shop & Veterinário
+                                <PawPrint size={32} className="inline-block mr-2 align-middle" /> Pet Shop & Veterinário
                             </motion.span>
 
                             <motion.h1
@@ -170,7 +170,7 @@ export default function App() {
                                 className="flex flex-wrap gap-4 mb-12"
                             >
                                 <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-10 py-4 bg-[var(--color-brand)] text-white rounded-xl font-bold text-sm uppercase tracking-wider hover:bg-[var(--color-brand-dark)] transition-all hover:shadow-xl hover:shadow-[var(--color-brand)]/30 hover:-translate-y-1">
-                                    📱 Agendar Agora
+                                    <Phone size={16} className="inline-block mr-1 align-middle" /> Agendar Agora
                                 </a>
                                 <a href="#servicos" className="inline-flex items-center gap-3 px-10 py-4 border border-white/20 text-white rounded-xl font-bold text-sm uppercase tracking-wider hover:bg-white/10 transition-all backdrop-blur-sm">
                                     Ver Serviços
@@ -220,14 +220,14 @@ export default function App() {
                                     transition={{ repeat: Infinity, duration: 3 }}
                                     className="absolute -top-4 -right-4 w-16 h-16 bg-[var(--color-brand)]/20 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/10"
                                 >
-                                    <span className="text-2xl">🐕</span>
+                                    <Dog size={24} className="text-2xl" />
                                 </motion.div>
                                 <motion.div
                                     animate={{ y: [5, -5, 5] }}
                                     transition={{ repeat: Infinity, duration: 4 }}
                                     className="absolute -bottom-4 -left-4 w-14 h-14 bg-[var(--color-brand)]/20 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/10"
                                 >
-                                    <span className="text-2xl">🐈</span>
+                                    <Cat size={24} className="text-2xl" />
                                 </motion.div>
                             </div>
                         </motion.div>
@@ -318,7 +318,7 @@ export default function App() {
                                 whileHover={{ scale: 1.05, y: -5 }}
                                 className={`aspect-square rounded-2xl bg-gradient-to-br ${item.gradient} flex flex-col items-center justify-center gap-3 border border-white/10 cursor-pointer backdrop-blur-sm hover:border-[var(--color-brand)]/30 transition-all`}
                             >
-                                <span className="text-4xl">{item.emoji}</span>
+                                <item.icon size={32} className="text-4xl" />
                                 <span className="text-white font-display text-lg font-bold">{item.label}</span>
                             </motion.div>
                         ))}
@@ -496,7 +496,7 @@ export default function App() {
                         <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">Pronto para cuidar do seu pet?</h2>
                         <p className="text-white/80 text-lg mb-8">Agende agora pelo WhatsApp. Rápido, fácil e sem complicação!</p>
                         <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-10 py-5 bg-white text-[var(--color-brand)] rounded-xl font-bold text-sm uppercase tracking-wider hover:shadow-xl transition-all hover:-translate-y-1">
-                            📱 Agendar pelo WhatsApp
+                            <Phone size={16} className="inline-block mr-1 align-middle" /> Agendar pelo WhatsApp
                         </a>
                     </motion.div>
                 </div>
@@ -507,7 +507,7 @@ export default function App() {
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
                         <div>
-                            <span className="font-display text-2xl font-bold mb-4 block">🐾 Pet<span className="text-[var(--color-brand)]">Vida</span></span>
+                            <span className="font-display text-2xl font-bold mb-4 block"><PawPrint size={24} className="inline-block mr-2 align-middle" /> Pet<span className="text-[var(--color-brand)]">Vida</span></span>
                             <p className="text-white/50 text-sm leading-relaxed max-w-xs">
                                 Cuidando do seu melhor amigo com amor, carinho e profissionalismo há mais de 10 anos.
                             </p>
